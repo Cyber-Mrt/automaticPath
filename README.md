@@ -1,4 +1,4 @@
-# # Automatic Trajectory Calculation and Visualization
+# # Automatic Trajectory Calculation and Visualization Using rsplan
 
 This project calculates and visualizes the optimal trajectory between two points using the Reep-Sheep algorithm. The user inputs the start point, end point, and orientation (yaw) to generate the trajectory.
 
@@ -41,9 +41,6 @@ This project calculates and visualizes the optimal trajectory between two points
 ![Example Image](Figure_2.png)
 ![Example Image](grafik_animasyon.gif)
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
 ## License
 
