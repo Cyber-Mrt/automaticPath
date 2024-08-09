@@ -35,8 +35,11 @@ This project calculates and visualizes the optimal trajectory between two points
 
 ## Example
 
-![Example Image](example.png)
-![Example GIF](exampleGIF.gif)
+![Example Image](Figure_1.png)
+![Example Image](Figure_2.png)
+![Example Image](Figure_3.png)
+![Example Image](Figure_4.png)
+![Example Image](Figure_1.svg)
 
 ## Contributing
 
