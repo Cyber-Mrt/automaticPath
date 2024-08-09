@@ -26,7 +26,7 @@ This project calculates and visualizes the optimal trajectory between two points
 
 1. Run the script:
     ```sh
-    python automatic_path.py
+    python automatic_path_en.py
     ```
 
 2. Click on the plot to select the start and end points.
