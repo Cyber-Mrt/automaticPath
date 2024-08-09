@@ -135,6 +135,7 @@ def ax_limitor(ax: plt.Axes, rs_path: rsplan.Path) -> None:
     x_coords, y_coords, yaw = rs_path.coordinates_tuple()
     ax.set_xlim(min(x_coords) - 2, max(x_coords) + 2)
     ax.set_ylim(min(y_coords) - 2, max(y_coords) + 2)
+    
 
 if __name__ == "__main__":
     _run()
