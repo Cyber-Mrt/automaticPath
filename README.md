@@ -37,8 +37,6 @@ This project calculates and visualizes the optimal trajectory between two points
 
 ![Example Image](Figure_1.png)
 ![Example Image](Figure_12.png)
-![Example Image](Figure_12.png)
-![Example Image](Figure_12.png)
 ![Example Image](Figure_5.png)
 ![Example Image](input1.png)
 ![Example Image](input2.png)
