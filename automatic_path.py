@@ -115,9 +115,7 @@ def animation(path: rsplan.Path, ax) -> FuncAnimation:
 
     ani = FuncAnimation(plt.gcf(), _animate, frames=len(x_coords), init_func=_init, interval=10, blit=False)
     
-    # GIF olarak kaydet
-    ani.save("grafik_animasyon.gif", writer=PillowWriter(fps=20))
-    
+   
     return ani
 
 def _run() -> None:
