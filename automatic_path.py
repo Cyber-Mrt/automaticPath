@@ -3,7 +3,7 @@ from typing import List, Tuple
 
 import numpy as np
 import rsplan
-from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation, PillowWriter
 
 import matplotlib as plt
 plt.use('TkAgg')
@@ -16,13 +16,10 @@ turn_radius = 4.5
 ani = None
 
 """
-
 Eğer ani değişkenini global olarak tanımlamazsak, 
 FuncAnimation nesnesi fonksiyonun bitişiyle birlikte yok olur ve animasyon çalışmaz. 
 Bu yüzden, ani değişkenini global olarak tanımlayarak ve fonksiyon içinde ona değer atayarak animasyonun yaşam döngüsünü kontrol altına aldık.
-
 """
-
 
 def _get_yaw() -> float:
     """Kullanıcıdan yaw değerini alır"""
@@ -84,7 +81,7 @@ def _onclick(event) -> None:
         if len(points) == 2:
             plt.gcf().canvas.mpl_disconnect(cid)
 
-            #When two points are selected, path is calculated rest of the code is for path calculation
+            # When two points are selected, path is calculated rest of the code is for path calculation
             start_yaw = _get_yaw()
             end_yaw = _get_yaw()
             start_comb = (points[0][0], points[0][1], start_yaw)
@@ -117,6 +114,10 @@ def animation(path: rsplan.Path, ax) -> FuncAnimation:
         return line,
 
     ani = FuncAnimation(plt.gcf(), _animate, frames=len(x_coords), init_func=_init, interval=10, blit=False)
+    
+    # GIF olarak kaydet
+    ani.save("grafik_animasyon.gif", writer=PillowWriter(fps=20))
+    
     return ani
 
 def _run() -> None:
@@ -128,15 +129,14 @@ def _run() -> None:
     ax.set_ylim(-20, 20)
     ax.set_xlim(-20, 20)
 
-    plt.gcf().canvas.mpl_connect("button_press_event", _onclick) # When mouse is clicked, _onclick function is called
-
+    plt.gcf().canvas.mpl_connect("button_press_event", _onclick)  # When mouse is clicked, _onclick function is called
     plt.show()
 
 def ax_limitor(ax: plt.Axes, rs_path: rsplan.Path) -> None:
     """Eksen limitlerini ayarlar"""
     x_coords, y_coords, yaw = rs_path.coordinates_tuple()
-    ax.set_xlim( min(x_coords)-2 , max(x_coords)+2)
-    ax.set_ylim( min(y_coords)-2 , max(y_coords)+2)
+    ax.set_xlim(min(x_coords) - 2, max(x_coords) + 2)
+    ax.set_ylim(min(y_coords) - 2, max(y_coords) + 2)
 
 if __name__ == "__main__":
     _run()
