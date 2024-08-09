@@ -40,7 +40,7 @@ This project calculates and visualizes the optimal trajectory between two points
 ![Example Image](input2.png)
 ![Example Image](Figure_2.png)
 
-## Visulization
+## Visulization Example
 ![Example Image](grafik_animasyon.gif)
 
 
