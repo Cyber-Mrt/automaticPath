@@ -3,11 +3,12 @@ from typing import List, Tuple
 
 import numpy as np
 import rsplan
-from matplotlib.animation import FuncAnimation, PillowWriter
+from matplotlib.animation import FuncAnimation
 
 import matplotlib as plt
 plt.use('TkAgg')
 import matplotlib.pyplot as plt
+
 
 points = []
 cid = None
@@ -115,7 +116,7 @@ def animation(path: rsplan.Path, ax) -> FuncAnimation:
 
     ani = FuncAnimation(plt.gcf(), _animate, frames=len(x_coords), init_func=_init, interval=10, blit=False)
     
-   
+    
     return ani
 
 def _run() -> None:
